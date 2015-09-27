@@ -1,0 +1,9 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="translation.Main" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Translation">
+		<content>
+			<Input value="{/model/ad}" width="200px" />
+			<Button text="{i18n>buttonText}" press="onMerhaba" />
+		</content>
+	</Page>
+</core:View>

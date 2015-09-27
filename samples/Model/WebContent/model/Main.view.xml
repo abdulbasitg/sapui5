@@ -1,0 +1,9 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="model.Main" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Model">
+		<content>
+			<Input value="{/model/ad}" width="200px" />
+			<Button text="Merhaba" press="onMerhaba" />
+		</content>
+	</Page>
+</core:View>
