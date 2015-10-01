@@ -1,0 +1,44 @@
+<mvc:View
+	controllerName="com.ag.products.controller.Master"
+	displayBlock="true"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<Page id="masterPage" title="Products">
+		<subHeader>
+			<Bar id="searchBar">
+				<contentMiddle>
+					<SearchField
+						id="idSearch"
+						showRefreshButton="{device>/isNoTouch}"
+						search="onSearch"
+						tooltip="{i18n>masterSearchTooltip}"
+						width="100%">
+					</SearchField>
+				</contentMiddle>
+			</Bar>
+		</subHeader>	
+		<content>	
+			<List
+				id="list"
+				items="{/Products}"
+				mode="{device>/listMode}"
+				noDataText="{i18n>masterListNoDataText}"
+				select="onSelect"
+				growing="true"
+				growingScrollToLoad="true">
+				<items>
+					<ObjectListItem
+						type="{device>/listItemType}"
+						press="onSelect"
+						title="{Name}"
+						number="{
+							path: 'Price',
+							formatter: 'com.ag.products.util.Formatter.currencyValue'
+						}"
+						numberUnit="USD">
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>					
+	</Page>
+</mvc:View>		

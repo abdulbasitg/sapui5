@@ -1,0 +1,96 @@
+<mvc:View
+	controllerName="com.ag.products.controller.Detail"
+	displayBlock="true"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns="sap.m">
+	<Page id="detailPage" title="Product Detail">
+		<content>	
+			<ObjectHeader
+				title="{Name}"
+				number="{
+					path: 'Price',
+					formatter: 'com.ag.products.util.Formatter.currencyValue'
+				}"
+				numberUnit="USD">
+				<attributes>
+					<ObjectAttribute text="{i18n>detailFromDate} {
+						path: 'ReleaseDate',
+						type: 'sap.ui.model.type.Date'
+						}" />
+					<ObjectAttribute text="{Description}" />
+				</attributes>
+				<firstStatus>
+					<ObjectStatus
+						text="{
+							path: 'DiscontinuedDate',
+							formatter: 'com.ag.products.util.Formatter.discontinuedStatusValue'
+						}"
+						state="{
+							path: 'DiscontinuedDate',
+							formatter: 'com.ag.products.util.Formatter.discontinuedStatusState'
+						}" />
+				</firstStatus>
+			</ObjectHeader>
+	<l:Grid
+	    id="idCategoryGrid"
+		defaultSpan="L12 M12 S12"
+		width="auto">
+		<l:content>
+			<f:SimpleForm
+				minWidth="1024"
+				maxContainerCols="2"
+				editable="false"
+				layout="ResponsiveGridLayout"
+				title="{i18n>categoryInfo}"
+				labelSpanL="3"
+				labelSpanM="3"
+				emptySpanL="4"
+				emptySpanM="4"
+				columnsL="1"
+				columnsM="1">
+				<f:content>
+					<Label text="{i18n>categoryInfoID}" />
+					<Text text="{ID}" />
+					<Label text="{i18n>categoryInfoName}" />
+					<Text text="{Name}" />
+				</f:content>
+			</f:SimpleForm>
+		</l:content>
+	</l:Grid>		
+<l:Grid
+		id="idSupplierGrid"
+		defaultSpan="L12 M12 S12"
+		width="auto">
+		<l:content>
+			<f:SimpleForm
+				minWidth="1024"
+				maxContainerCols="2"
+				editable="false"
+				layout="ResponsiveGridLayout"
+				title="{i18n>supplierAddress}"
+				labelSpanL="3"
+				labelSpanM="3"
+				emptySpanL="4"
+				emptySpanM="4"
+				columnsL="1"
+				columnsM="1">
+				<f:content>
+					<Label text="{i18n>supplierAddressName}" />
+					<Text text="{Name}" />
+					<Label text="{i18n>supplierAddressStreet}" />
+					<Text text="{Address/Street}" />
+					<Label text="{i18n>supplierAddressCity}" />
+					<Text text="{Address/City}" />
+					<Label text="{i18n>supplierAddressZIPCode}" />
+					<Text text="{Address/ZipCode}" />
+					<Label text="{i18n>supplierAddressCountry}" />
+					<Text text="{Address/Country}" />
+				</f:content>
+			</f:SimpleForm>
+		</l:content>
+	</l:Grid>	
+		</content>					
+	</Page>
+</mvc:View>		
