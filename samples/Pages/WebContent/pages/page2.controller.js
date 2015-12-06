@@ -3,7 +3,7 @@ sap.ui.define([
 ], function (Controller) {
    "use strict";
    return Controller.extend("pages.page2", {
-		onGeri : function() {
+		onGeri : function(evt) {
 			app.back();
 		}
    });

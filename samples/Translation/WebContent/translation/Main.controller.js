@@ -9,11 +9,12 @@ sap.ui.define([
      onInit : function () {
          var oData = {
              model : {
-                ad : ""
+                ad : "",
+                soyad: ""
              }
           };
          var oModel = new JSONModel(oData);
-         this.getView().setModel(oModel);
+         this.getView().setModel(oModel,"main");
          var i18nModel = new ResourceModel({
             bundleName: "i18n"
          });
@@ -22,8 +23,11 @@ sap.ui.define([
       
       onMerhaba : function () {
          var oBundle = this.getView().getModel("i18n").getResourceBundle();
-         var ad = this.getView().getModel().getProperty("/model/ad");
-         var sMsg = oBundle.getText("helloMsg", [ad]);
+         var oView = this.getView();
+         var oModel = oView.getModel("main");
+         var ad = oModel.getProperty("/model/ad");
+         var soyad = oModel.getProperty("/model/soyad");
+         var sMsg = oBundle.getText("helloMsg", [ad,soyad]);
          MessageToast.show(sMsg);
       }
    });

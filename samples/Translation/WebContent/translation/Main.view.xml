@@ -3,6 +3,7 @@
 	<Page title="Translation">
 		<content>
 			<Input value="{/model/ad}" width="200px" />
+			<Input value="{/model/soyad}" width="200px" />
 			<Button text="{i18n>buttonText}" press="onMerhaba" />
 		</content>
 	</Page>

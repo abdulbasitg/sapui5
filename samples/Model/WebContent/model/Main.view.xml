@@ -2,8 +2,8 @@
 		controllerName="model.Main" xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page title="Model">
 		<content>
-			<Input value="{/model/ad}" width="200px" />
-			<Button text="Merhaba" press="onMerhaba" />
+			<Input id="idAd" value="{/model/ad}" width="200px" />
+			<Button id="idMerhabaButton" text="Merhaba" press="onMerhaba" />
 		</content>
 	</Page>
 </core:View>

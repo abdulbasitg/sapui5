@@ -4,6 +4,8 @@ sap.ui.define([
 ], function (Controller, MessageToast) {
    "use strict";
    return Controller.extend("com.ag.controller.Main", {
+	  onInit : function () {  
+	  },
       onMerhaba : function () {
          var oBundle = this.getView().getModel("i18n").getResourceBundle();
          var sAd = this.getView().getModel().getProperty("/model/ad");

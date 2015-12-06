@@ -8,7 +8,7 @@ sap.ui.define([
 	  metadata : {
 		rootView : "com.ag.view.Main"  
 	  },
-      init : function () {
+      init : function () { 
          UIComponent.prototype.init.apply(this, arguments);
          var oData = {
         	model : {
